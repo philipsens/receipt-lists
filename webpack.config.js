@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/app.jsx',
@@ -37,5 +38,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/template.html',
     }),
+    new CleanWebpackPlugin('app'),
   ],
 }
