@@ -1,13 +1,13 @@
 {
   "name": "receipt-lists",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app/main.js",
   "repository": "git@github.com:amahoola/receipt-lists.git",
   "author": "Wesley Klop <wesley19097@gmail.com> (https://wesley.io)",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "electron ."
+    "start": "electron app/"
   },
   "devDependencies": {
     "electron": "^1.8.2"
