@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "electron app/"
+    "start": "electron app/main.js"
   },
   "devDependencies": {
     "electron": "^1.8.2"
