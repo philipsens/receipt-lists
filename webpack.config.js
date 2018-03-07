@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const IS_DEV = process.env.NODE_ENV === 'development'
 
@@ -47,14 +48,25 @@ if (IS_DEV) {
     use: ['style-loader', 'css-loader'],
   })
 } else {
+  // Production specific rules
   config.module.rules.push({
     test: /\.css$/,
     use: ExtractTextPlugin.extract({
       fallback: 'style-loader',
-      use: 'css-loader',
+      use: {
+        loader: 'css-loader',
+        options: {
+          minimize: true,
+          sourceMap: true,
+        },
+      },
     }),
   })
-  config.plugins.push(new ExtractTextPlugin('styles.css'))
+  config.plugins.push(
+    new ExtractTextPlugin('styles.css'),
+    new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+  )
+  config.output.filename = '[name].[hash].js'
 }
 
 module.exports = config
