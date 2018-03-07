@@ -9,6 +9,7 @@ const IS_DEV = process.env.NODE_ENV === 'development'
 const config = {
   entry: './src/app.jsx',
   context: __dirname,
+  target: 'electron-main',
   output: {
     path: path.resolve(__dirname, 'app'),
     filename: '[name].js',
@@ -21,7 +22,19 @@ const config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env'],
+            presets: [
+              '@babel/preset-react',
+              [
+                '@babel/preset-env',
+                {
+                  targets: {
+                    browsers: ['chrome 59'],
+                    node: '8.2.1',
+                  },
+                },
+              ],
+            ],
+            cacheDirectory: true,
           },
         },
       },
@@ -57,7 +70,6 @@ if (IS_DEV) {
         loader: 'css-loader',
         options: {
           minimize: true,
-          sourceMap: true,
         },
       },
     }),
