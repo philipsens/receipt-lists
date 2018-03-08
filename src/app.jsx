@@ -85,9 +85,6 @@ const ReceiptListPage = () => (
                 </Col>
             </Row>
         </Content>
-        <Footer style={{textAlign: 'center'}}>
-            Receipt Lists by Wesley Klop &amp; Sergi Philipsen
-        </Footer>
     </Layout>
 )
 
