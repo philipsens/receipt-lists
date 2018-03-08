@@ -19,7 +19,7 @@ const App = () => (
 )
 
 const Sidebar = () => (
-    <Sider breakpoint="sm" collapsedWidth="0">
+    <Sider className="sidebar" breakpoint="sm" collapsedWidth="0">
         <div className="logo">
             <Icon type="bars"/>
             <span>Receipt Lists</span>
