@@ -34,6 +34,8 @@
     "react-dom": "^16.2.0"
   },
   "files": [
+    "*.js",
+    "node_modules/",
     "build/"
   ]
 }
