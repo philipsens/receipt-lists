@@ -3,9 +3,13 @@ import {render} from 'react-dom'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import {Layout, Menu, Icon, Card, Row, Col} from 'antd'
 import 'antd/dist/antd.css'
-import '../src/main.css'
+import './main.css'
+import Dashboard from "./components/pages/DashboardPage";
+import Sidebar from "./components/Sidebar";
 
-const {Header, Content, Footer, Sider} = Layout
+const {Header, Content} = Layout
+const { Meta } = Card
+
 
 const App = () => (
     <Layout>
@@ -18,39 +22,18 @@ const App = () => (
     </Layout>
 )
 
-const Sidebar = () => (
-    <Sider className="sidebar" breakpoint="sm" collapsedWidth="0">
-        <div className="logo">
-            <Icon type="bars"/>
-            <span>Receipt Lists</span>
-        </div>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-                <Link to={'/'}>
-                    <Icon type="dashboard"/>
-                    <span>Dashboard</span>
-                </Link>
-            </Menu.Item>
-            <Menu.Item key="2">
-                <Link to={'/list'}>
-                    <Icon type="bars"/>
-                    <span>All Lists</span>
-                </Link>
-            </Menu.Item>
-            <Menu.Item key="3">
-                <Link to={'/receipt'}>
-                    <Icon type="file"/>
-                    <span>All Receipts</span>
-                </Link>
-            </Menu.Item>
-            <Menu.Item key="4">
-                <Link to={'/settings'}>
-                    <Icon type="setting"/>
-                    <span>Settings</span>
-                </Link>
-            </Menu.Item>
-        </Menu>
-    </Sider>
+const Receipt = () => (
+    <Card
+        className="receipt"
+        hoverable
+        cover={<img className="cover" alt="example" src="https://d85ecz8votkqa.cloudfront.net/support/help_center/Print_Payment_Receipt.JPG" />}
+        actions={['€5,00', 'Sergi']}
+    >
+        <Meta
+            title="Een bon"
+            description="This is the description"
+        />
+    </Card>
 )
 
 const ReceiptListPage = () => (
@@ -86,32 +69,6 @@ const ReceiptListPage = () => (
             </Row>
         </Content>
     </Layout>
-)
-
-const Dashboard = () => (
-    <Layout>
-        <Header className="header">
-        </Header>
-        <Content className="content">
-            <Row gutter={16}>
-                <Col span={6}>
-                    <Card title="Een widget ofzo">
-                        Hier staat info
-                    </Card>
-                </Col>
-            </Row>
-        </Content>
-    </Layout>
-)
-
-const Receipt = () => (
-    <Card
-        hoverable
-        cover={<img alt="example" src="https://d85ecz8votkqa.cloudfront.net/support/help_center/Print_Payment_Receipt.JPG" />}
-        className="receipt"
-        title="Een bon">
-        Info over de bon
-    </Card>
 )
 
 render(
