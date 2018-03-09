@@ -35,6 +35,12 @@ html {
     margin-bottom: 16px;
 }
 
+.receipt .cover {
+    height: 150px;
+    display: block;
+    object-fit: cover;
+}
+
 .sidebar {
     z-index: 100;
     height: 100vh;
