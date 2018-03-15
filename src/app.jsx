@@ -1,15 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Card, Col, Icon, Layout, Menu, Row } from 'antd'
 import 'antd/dist/antd.css'
 import './main.css'
-import Dashboard from './components/pages/DashboardPage';
-import Sidebar from './components/Sidebar';
+import Dashboard from './components/pages/DashboardPage'
+import Sidebar from './components/Sidebar'
 
 const { Header, Content } = Layout
 const { Meta } = Card
-
 
 const App = () => (
   <Layout>
@@ -26,14 +25,16 @@ const Receipt = () => (
   <Card
     className="receipt"
     hoverable
-    cover={<img className="cover" alt="example"
-                src="https://d85ecz8votkqa.cloudfront.net/support/help_center/Print_Payment_Receipt.JPG" />}
+    cover={
+      <img
+        className="cover"
+        alt="example"
+        src="https://d85ecz8votkqa.cloudfront.net/support/help_center/Print_Payment_Receipt.JPG"
+      />
+    }
     actions={['€5,00', 'Sergi']}
   >
-    <Meta
-      title="Een bon"
-      description="This is the description"
-    />
+    <Meta title="Een bon" description="This is the description" />
   </Card>
 )
 
@@ -75,5 +76,6 @@ const ReceiptListPage = () => (
 render(
   <Router>
     <App />
-  </Router>
-  , document.querySelector('#target'))
+  </Router>,
+  document.querySelector('#target'),
+)
