@@ -60,6 +60,10 @@ if (IS_DEV) {
     use: ['style-loader', 'css-loader'],
   })
   config.target = 'web'
+  config.devServer = {
+    color: true,
+    historyApiFallback: true,
+  }
 } else {
   // Production specific rules
   config.target = 'electron-main'
