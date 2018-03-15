@@ -61,7 +61,6 @@ if (IS_DEV) {
   })
   config.target = 'web'
   config.devServer = {
-    color: true,
     historyApiFallback: true,
   }
 } else {
