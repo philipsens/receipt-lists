@@ -9,7 +9,6 @@ const IS_DEV = process.env.NODE_ENV === 'development'
 const config = {
   entry: './src/app.jsx',
   context: __dirname,
-  target: 'electron-main',
   output: {
     path: path.resolve(__dirname, 'app'),
     filename: '[name].js',
@@ -60,8 +59,10 @@ if (IS_DEV) {
     test: /\.css$/,
     use: ['style-loader', 'css-loader'],
   })
+  config.target = 'web'
 } else {
   // Production specific rules
+  config.target = 'electron-main'
   config.module.rules.push({
     test: /\.css$/,
     use: ExtractTextPlugin.extract({
