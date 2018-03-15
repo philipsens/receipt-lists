@@ -48,3 +48,6 @@ html {
   height: 100vh;
 }
 
+.ant-modal-body > * {
+  margin: 5px 0;
+}

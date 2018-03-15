@@ -5,11 +5,13 @@ import Row from 'antd/lib/row'
 import Menu from 'antd/lib/menu'
 import Icon from 'antd/lib/icon'
 import Receipt from '../components/Receipt.jsx'
+import AddReceipt from '../components/AddReceipt'
 
 const { Header, Content } = Layout
 
 const ReceiptListPage = () => (
   <Layout>
+    <AddReceipt />
     <Header className="header">
       <Menu className="menu" mode="horizontal" defaultSelectedKeys={['2']}>
         <Menu.Item>
