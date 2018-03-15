@@ -22,13 +22,13 @@ html {
 }
 
 .header .menu {
-    line-height: 64px;
+    line-height: 62px;
 }
 
 .content {
     padding: 24px 16px 0;
     overflow-y: auto;
-    height: calc(100vh - 64px);
+    height: calc(100vh - 62px);
 }
 
 .receipt {
