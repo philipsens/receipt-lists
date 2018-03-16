@@ -1,8 +1,8 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
-  "version": "0.13.2",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "recipe-lists",
+  "productName": "Recipe Lists",
+  "version": "0.1.0",
+  "description": "An application to keep track of receipt lists",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
     "build-dll": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.renderer.dev.dll.js --colors",
@@ -31,8 +31,8 @@
   },
   "browserslist": "electron 1.6",
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.develar.ElectronReact",
+    "productName": "Recipe List",
+    "appId": "nl.philipsens.recipe-lists",
     "files": [
       "dist/",
       "node_modules/",
@@ -74,29 +74,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
+    "url": "git+https://github.com/amahoola/receipt-lists.git"
   },
   "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
+    "name": "S. Philipsens",
+    "email": "philipsen.sergi@gmail.com",
+    "url": "https://philipsens.nl"
   },
+  "contributors": [
+    {
+      "name": "W. Klop",
+      "email": "wesley19097@gmail.com",
+      "url": "https://wesley.io"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chentsulin/electron-react-boilerplate/issues"
+    "url": "https://github.com/amahoola/receipt-lists/issues"
   },
   "keywords": [
     "electron",
-    "boilerplate",
-    "react",
-    "redux",
-    "flow",
-    "sass",
-    "webpack",
-    "hot",
-    "reload"
+    "recipe",
+    "list",
+    "recipe list"
   ],
-  "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/amahoola/receipt-lists#readme",
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
