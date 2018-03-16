@@ -2,7 +2,10 @@
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
-    "allowImportExportEverywhere": true
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "extends": ["airbnb", "plugin:prettier/recommended"],
   "env": {
@@ -33,6 +36,10 @@
       "singleQuote": true,
       "trailingComma": "all",
       "semi": false
+    }],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
     }]
   },
   "plugins": ["flowtype", "import", "promise", "compat", "react", "prettier"],

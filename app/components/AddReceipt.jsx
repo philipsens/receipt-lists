@@ -15,7 +15,7 @@ class AddReceipt extends React.Component {
 
   handleCancel = () => this.setState({ previewVisible: false })
 
-  handlePreview = (file) => {
+  handlePreview = file => {
     this.setState({
       previewImage: file.url || file.thumbUrl,
       previewVisible: true,
@@ -36,7 +36,9 @@ class AddReceipt extends React.Component {
 
     return (
       <div>
-        <Button type="primary" onClick={() => this.setModalVisible(true)}>Add-receipt</Button>
+        <Button type="primary" onClick={() => this.setModalVisible(true)}>
+          Add-receipt
+        </Button>
 
         <Modal
           title="New Receipt"
@@ -57,13 +59,16 @@ class AddReceipt extends React.Component {
           <Input placeholder="Title" />
           <Input placeholder="Title" />
         </Modal>
-        <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+        <Modal
+          visible={previewVisible}
+          footer={null}
+          onCancel={this.handleCancel}
+        >
           <img alt="preview" style={{ width: '100%' }} src={previewImage} />
         </Modal>
       </div>
     )
   }
-
 }
 
 export default AddReceipt

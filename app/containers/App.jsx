@@ -1,14 +1,17 @@
-import React, { Component } from "react";
-import Layout from "antd/lib/layout";
-import Sidebar from "../components/Sidebar";
+// @flow
+import * as React from 'react'
+import Layout from 'antd/lib/layout'
+import Sidebar from '../components/Sidebar'
 
-export default class App extends Component {
-  render() {
-    return (
-      <Layout>
-        <Sidebar />
-        {this.props.children}
-      </Layout>
-    );
-  }
+type Props = {
+  children: React.Node,
 }
+
+const App = ({ children }: Props) => (
+  <Layout>
+    <Sidebar />
+    {children}
+  </Layout>
+)
+
+export default App

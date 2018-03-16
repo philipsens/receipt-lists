@@ -4,7 +4,7 @@ import Layout from 'antd/lib/layout'
 import Row from 'antd/lib/row'
 import Menu from 'antd/lib/menu'
 import Icon from 'antd/lib/icon'
-import Receipt from '../components/Receipt.jsx'
+import Receipt from '../components/Receipt'
 import AddReceipt from '../components/AddReceipt'
 
 const { Header, Content } = Layout
