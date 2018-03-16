@@ -1,9 +1,9 @@
 /* eslint flowtype-errors/show-errors: 0 */
-import React from 'react';
-import { Switch, Route } from 'react-router';
-import App from './containers/App';
-import ReceiptListPage from './containers/ReceiptListPage.jsx'
-import DashboardPage from './containers/DashboardPage.jsx'
+import React from 'react'
+import { Switch, Route } from 'react-router'
+import App from './containers/App'
+import ReceiptListPage from './containers/ReceiptListPage'
+import DashboardPage from './containers/DashboardPage'
 
 export default () => (
   <App>
@@ -13,4 +13,4 @@ export default () => (
       <Route component={DashboardPage} />
     </Switch>
   </App>
-);
+)
